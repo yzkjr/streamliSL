@@ -314,9 +314,7 @@ def formatar_equacao_latex(a, b, c, d):
 st.sidebar.header('📥 Entrada de Equações')
 st.sidebar.markdown("""
 Insira os coeficientes para o sistema de equações lineares da forma:
-- **ax + by + cz = d**
-
-Cada equação representa um plano no espaço 3D.
+- **ax + by + cz = d**.
 """)
 
 # Equação 1
