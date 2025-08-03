@@ -412,10 +412,6 @@ if st.sidebar.button("🚀 Resolver Sistema", type="primary"):
 # EXIBIÇÃO DOS RESULTADOS NA BARRA LATERAL
 # =============================================================================
 
-# =============================================================================
-# EXIBIÇÃO DOS RESULTADOS NA BARRA LATERAL
-# =============================================================================
-
 if 'sistema_resolvido' in st.session_state and st.session_state['sistema_resolvido']:
     st.sidebar.markdown("---")
     st.sidebar.header("📋 Resultado:")
@@ -486,7 +482,7 @@ col1, col2 = st.columns([1, 1])
 with col1:
     st.header("📝 Sistema de Equações")
     st.markdown("""
-    As equações inseridas são exibidas abaixo no formato matemático padrão.
+    As equações inseridas são exibidas abaixo.
     Cada equação representa um plano no espaço tridimensional.
     """)
     
