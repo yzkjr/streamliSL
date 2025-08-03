@@ -66,10 +66,7 @@ st.set_page_config(
 
 st.title("🔢 Resolvedor de Sistemas Lineares 3x3")
 st.markdown("""
-### Uma aplicação interativa para resolver sistemas de equações lineares com visualização 3D passo a passo
-
-Esta ferramenta permite resolver sistemas de equações lineares 3x3 através do método de eliminação gaussiana,
-visualizando cada etapa do processo tanto algebricamente quanto geometricamente.
+### Uma aplicação interativa para resolver sistemas de equações lineares com visualização 3D passo a passo.
 """)
 
 # =============================================================================
