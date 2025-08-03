@@ -9,11 +9,11 @@ Este módulo implementa um resolvedor completo de sistemas de equações lineare
 
 Funcionalidades principais:
 - Eliminação gaussiana com pivotamento
-- Eliminação regressiva (Gauss-Jordan)
+- Eliminação regressiva (Gauss)
 - Classificação de sistemas (SPD, SPI, SI)
 - Visualização 3D dos planos geométricos
 
-Autor: Sistema de Resolução Linear
+Autor: Izaac Soares, Jeferson Danilo
 Versão: 1.0
 Dependências: numpy, plotly, fractions
 """
