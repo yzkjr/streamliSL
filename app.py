@@ -654,7 +654,7 @@ with st.sidebar.expander("Como usar a aplicação"):
     st.markdown("""
     ### 🔧 **Entrada de Dados**
     - Insira os coeficientes para cada equação no formato **ax + by + cz = d**
-    - Use números decimais se necessário (ex: 1.5, -2.7)
+    - Use números decimais (ex: 1.5, -2.7)
     - Deixe coeficientes como zero para variáveis que não aparecem na equação
     
     ### 📊 **Interpretação dos Resultados**
