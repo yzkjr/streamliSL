@@ -7,16 +7,13 @@ RESOLVEDOR DE SISTEMAS LINEARES 3D - APLICAÇÃO STREAMLIT
 Aplicação interativa para resolução de sistemas de equações lineares 3x3
 com visualização 3D passo a passo do processo de eliminação gaussiana.
 
-Autor: [Seu Nome]
-Data: [Data Atual]
-Versão: 2.0
+Autor: Izaac Soares, Jeferson Danilo
+Data: 03/08/2025
+Versão: 1.0
 
 Funcionalidades:
-- Entrada interativa de coeficientes
 - Resolução passo a passo via eliminação gaussiana
 - Visualização 3D dos planos geométricos
-- Formatação LaTeX das matrizes
-- Interface responsiva e intuitiva
 
 Dependências:
 - streamlit
@@ -412,10 +409,6 @@ if st.sidebar.button("🚀 Resolver Sistema", type="primary"):
 # EXIBIÇÃO DOS RESULTADOS NA BARRA LATERAL
 # =============================================================================
 
-# =============================================================================
-# EXIBIÇÃO DOS RESULTADOS NA BARRA LATERAL
-# =============================================================================
-
 if 'sistema_resolvido' in st.session_state and st.session_state['sistema_resolvido']:
     st.sidebar.markdown("---")
     st.sidebar.header("📋 Resultado:")
@@ -644,7 +637,7 @@ with col2:
         """)
 
 # =============================================================================
-# SEÇÃO DE AJUDA E DOCUMENTAÇÃO
+# SEÇÃO DE AJUDA
 # =============================================================================
 
 st.sidebar.markdown("---")
