@@ -9,7 +9,6 @@ Este módulo implementa um resolvedor completo de sistemas de equações lineare
 
 Funcionalidades principais:
 - Eliminação gaussiana com pivotamento
-- Eliminação regressiva (Gauss)
 - Classificação de sistemas (SPD, SPI, SI)
 - Visualização 3D dos planos geométricos
 
