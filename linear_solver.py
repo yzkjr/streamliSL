@@ -390,7 +390,7 @@ def eliminar_acima_com_pivo(A, steps_data, verbose=True):
             if verbose:
                 print_matriz(A_copy)
 
-            steps_data.append({'matriz': A_copy.copy(), 'step_name': f"Eliminação Regressiva: {operation_str}"})
+            steps_data.append({'matriz': A_copy.copy(), 'step_name': f"Eliminação: {operation_str}"})
 
     A[:] = A_copy[:]
 
@@ -538,7 +538,7 @@ def Resolva(A, verbose=True):
     steps_data.append({
         'matriz_str': An_str,
         'matriz_float': An_float,
-        'step_name': "Matriz Normalizada"
+        'step_name': ""
     })
 
     if verbose:
