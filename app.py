@@ -667,11 +667,6 @@ with st.sidebar.expander("Como usar a aplicação"):
     - Os planos 3D são atualizados conforme a matriz é transformada
     - Observe como as operações simplificam o sistema geometricamente
     - No resultado final (SPD), o ponto de interseção é destacado em dourado
-    
-    ### 🔍 **Processo de Eliminação**
-    - **Eliminação Progressiva**: Zeramos coeficientes abaixo da diagonal principal
-    - **Eliminação Regressiva**: Zeramos coeficientes acima da diagonal principal  
-    - **Pivotamento**: Trocamos linhas quando necessário para evitar divisão por zero
     """)
 
 with st.sidebar.expander("Exemplos de sistemas"):
