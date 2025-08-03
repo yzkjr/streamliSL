@@ -7,13 +7,16 @@ RESOLVEDOR DE SISTEMAS LINEARES 3D - APLICAÇÃO STREAMLIT
 Aplicação interativa para resolução de sistemas de equações lineares 3x3
 com visualização 3D passo a passo do processo de eliminação gaussiana.
 
-Autor: Izaac Soares, Jeferson Danilo
-Data: 03/08/2025
-Versão: 1.0
+Autor: [Seu Nome]
+Data: [Data Atual]
+Versão: 2.0
 
 Funcionalidades:
+- Entrada interativa de coeficientes
 - Resolução passo a passo via eliminação gaussiana
 - Visualização 3D dos planos geométricos
+- Formatação LaTeX das matrizes
+- Interface responsiva e intuitiva
 
 Dependências:
 - streamlit
@@ -409,6 +412,10 @@ if st.sidebar.button("🚀 Resolver Sistema", type="primary"):
 # EXIBIÇÃO DOS RESULTADOS NA BARRA LATERAL
 # =============================================================================
 
+# =============================================================================
+# EXIBIÇÃO DOS RESULTADOS NA BARRA LATERAL
+# =============================================================================
+
 if 'sistema_resolvido' in st.session_state and st.session_state['sistema_resolvido']:
     st.sidebar.markdown("---")
     st.sidebar.header("📋 Resultado:")
@@ -637,7 +644,7 @@ with col2:
         """)
 
 # =============================================================================
-# SEÇÃO DE AJUDA
+# SEÇÃO DE AJUDA E DOCUMENTAÇÃO
 # =============================================================================
 
 st.sidebar.markdown("---")
@@ -678,9 +685,9 @@ with st.sidebar.expander("Exemplos de sistemas"):
     
     ### ♾️ **Sistema com Infinitas Soluções (SPI)**
     ```
-    x + y + z = 1
-    2x + 2y + 2z = 2
-    x + y + z = 1
+    x + y - 2z = 6
+    2x + 3y + z = 8
+    0x + 0y + 0z = 0
     ```
     
     ### ❌ **Sistema Impossível (SI)**
@@ -719,6 +726,6 @@ st.markdown("""
 <div style='text-align: center; padding: 20px;'>
     <h3>🔢 Resolvedor de Sistemas Lineares 3D</h3>
     <p><strong>Desenvolvido com Streamlit </strong></p>
-    <p>✨ <em>Ferramenta educacional para compreensão visual da álgebra linear</em> ✨</p>
+    <p>✨ <em>Ferramenta educacional para a compreensão visual de sistemas lineares</em> ✨</p>
 </div>
 """, unsafe_allow_html=True)
