@@ -60,7 +60,13 @@ def renderizar_sidebar():
     
     # Presets para facilitar testes rápidos
     presets = {}
-    if dimensao == 3:
+    if dimensao == 2:
+        presets = [
+            [1.0,  1.0,  1.0,], 
+            [2.0,  3.0,  7.0,]   
+        ]
+        
+    elif dimensao == 3:
         presets = [
             [1.0,  1.0,  1.0,   6.0], 
             [1.0, -1.0,  2.0,   5.0], 
