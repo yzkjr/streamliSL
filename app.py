@@ -94,7 +94,7 @@ def executar_resolucao(dimensao, matriz_usuario):
         st.error(f"❌ Ocorreu um erro inesperado: {str(e)}")
 
 def exibir_exportacao(steps_data, desc, sol_textual):
-    st.markdown("### 📥 Exportar Relatório")
+    st.markdown("### 📥 Exportar Resolução")
     
     col_exp1, _ = st.columns([3, 1])
     with col_exp1:
@@ -103,7 +103,7 @@ def exibir_exportacao(steps_data, desc, sol_textual):
     html_relatorio = gerar_relatorio_html(steps_data, desc, sol_textual)
     
     st.download_button(
-        label="📄 Download da resolução completa (.html)",
+        label="📄 Download da resolução (.html)",
         data=html_relatorio,
         file_name="resolucao_sistema.html",
         mime="text/html",
