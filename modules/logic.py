@@ -329,7 +329,7 @@ def gerar_relatorio_html(steps: List[Dict], classificacao: str, solucao_textual:
         
     html += """
         </div>
-        <div class="footer">Gerado por Sistema LinearLab</div>
+        <div class="footer">Gerado por Sistema Linear Lab</div>
     </body>
     </html>
     """
