@@ -277,7 +277,7 @@ def gerar_relatorio_html(steps: List[Dict], classificacao: str, solucao_textual:
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Relatório de Resolução - SistemaLinearLab</title>
+        <title>Relatório de Resolução - Sistema LinearLab</title>
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <style>
@@ -297,7 +297,7 @@ def gerar_relatorio_html(steps: List[Dict], classificacao: str, solucao_textual:
     </head>
     <body>
         <h1>SistemaLinearLab - Relatório de Resolução</h1>
-        <p style="text-align: center;">Este documento foi gerado automaticamente. Para salvar como PDF, use a função de imprimir do navegador (Ctrl+P).</p>
+        <p style="text-align: center;">Para salvar como PDF, use a função de imprimir do navegador (Ctrl+P).</p>
         <br>
     """
 
@@ -329,7 +329,7 @@ def gerar_relatorio_html(steps: List[Dict], classificacao: str, solucao_textual:
         
     html += """
         </div>
-        <div class="footer">Gerado por SistemaLinearLab</div>
+        <div class="footer">Gerado por Sistema LinearLab</div>
     </body>
     </html>
     """
