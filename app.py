@@ -53,7 +53,6 @@ def main():
                 else:
                     term = f"{val_display}{var}"  # Ex: x
             else:
-                # Termos seguintes (com espaçamento para o LaTeX ficar bonito)
                 if coef >= 0:
                     term = f"+ {val_display}{var}" # Ex: + y
                 else:
