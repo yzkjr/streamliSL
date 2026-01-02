@@ -43,7 +43,7 @@ def format_coef_latex(c: float) -> str:
     return num_to_latex(c)
 
 # =============================
-# Geração da Matriz (LaTeX)
+# Geração da Matriz
 # =============================
 
 def augmented_matrix_to_latex(M: List[List[float]], highlight_rows: Set[int] = None, pivot_pos: Tuple[int, int] = None) -> str:
@@ -71,7 +71,7 @@ def augmented_matrix_to_latex(M: List[List[float]], highlight_rows: Set[int] = N
     return rf"\left[\begin{{array}}{{{col_spec}}}{body}\end{{array}}\right]"
 
 # =============================
-# Operações (LaTeX)
+# Operações
 # =============================
 
 def _op_elim_latex(i: int, k: int, f: float) -> str:
@@ -267,17 +267,17 @@ def resolver_sistema_linear_passo_a_passo(matriz: List[List[float]], verbose: bo
     sol_txt, steps, classificacao, ponto = eliminar_gaussiana(matriz)
     return classificacao, sol_txt, steps, ponto
 
-# --- GERADOR DE RELATÓRIO HTML ---
+# --- GERADOR DE RESOLUÇÃO HTML ---
 
 def gerar_relatorio_html(steps: List[Dict], classificacao: str, solucao_textual: List[str]) -> str:
-    """Gera um relatório HTML completo com suporte a LaTeX (MathJax)."""
+    """Gera a resolução HTML com suporte a LaTeX (MathJax)."""
     html = """
     <!DOCTYPE html>
     <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Relatório de Resolução - SistemaLinearLab</title>
+        <title>Relatório de Resolução - Sistema Linear Lab</title>
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <style>
@@ -297,7 +297,7 @@ def gerar_relatorio_html(steps: List[Dict], classificacao: str, solucao_textual:
     </head>
     <body>
         <h1>SistemaLinearLab - Relatório de Resolução</h1>
-        <p style="text-align: center;">Este documento foi gerado automaticamente. Para salvar como PDF, use a função de imprimir do navegador (Ctrl+P).</p>
+        <p style="text-align: center;">Para salvar como PDF, use a função de imprimir do navegador (Ctrl+P).</p>
         <br>
     """
 
@@ -329,7 +329,7 @@ def gerar_relatorio_html(steps: List[Dict], classificacao: str, solucao_textual:
         
     html += """
         </div>
-        <div class="footer">Gerado por SistemaLinearLab</div>
+        <div class="footer">Gerado por Sistema Linear Lab</div>
     </body>
     </html>
     """

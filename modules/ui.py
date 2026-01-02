@@ -23,7 +23,6 @@ def aplicar_estilos_css():
         .stButton button {width: 100%; border-radius: 8px; font-weight: bold;}
         .js-plotly-plot {margin: 0 auto;}
         
-        /* Oculta botões de incremento/decremento dos inputs numéricos para visual mais limpo */
         button[data-testid="stNumberInputStepDown"],
         button[data-testid="stNumberInputStepUp"] {
             display: none !important;
@@ -55,38 +54,40 @@ def renderizar_sidebar():
     var_names = ['x', 'y', 'z', 'w', 'v']
     matriz_input = []
     
-    # Estilo inline para as variáveis (x, y, z...) ao lado dos inputs
     style_texto = "padding-top: 15px; text-align: center; font-weight: bold; white-space: nowrap; font-size: 14px;"
     
-    # Presets para facilitar testes rápidos
     presets = {}
-    if dimensao == 3:
+    if dimensao == 2:
         presets = [
-            [1.0,  1.0,  1.0,   6.0], 
-            [1.0, -1.0,  2.0,   5.0], 
-            [2.0,  1.0, -1.0,   1.0]  
+            [1,  1,  1,], 
+            [2,  3,  7,]   
+        ]
+        
+    elif dimensao == 3:
+        presets = [
+            [1,  1,  1,  6], 
+            [1, -1,  2,  5], 
+            [2,  1, -1,  1]  
         ]
     elif dimensao == 4:
         presets = [
-            [1.0,  1.0, -1.0,  0.0, 10.0],
-            [2.0, -1.0,  0.0,  1.0,  5.0],
-            [1.0,  0.0,  3.0, -1.0,  7.0],
-            [0.0,  2.0, -1.0,  1.0,  4.0]
+            [1,  1, -1,  0, 10],
+            [2, -1,  0,  1,  5],
+            [1,  0,  3, -1,  7],
+            [0,  2, -1,  1,  4]
         ]
     elif dimensao == 5:
         presets = [
-            [10.0, -2.0, -1.0,  0.0,  0.0, 12.0],
-            [-2.0,  8.0, -2.0, -1.0,  0.0,  0.0],
-            [-1.0, -2.0,  9.0, -2.0,  0.0,  5.0],
-            [ 0.0, -1.0, -2.0,  7.0, -1.0,  0.0],
-            [ 0.0,  0.0,  0.0, -1.0,  6.0, 10.0]
+            [10, -2, -1,  0,  0, 12],
+            [-2,  8, -2, -1,  0,  0],
+            [-1, -2,  9, -2,  0,  5],
+            [ 0, -1, -2,  7, -1,  0],
+            [ 0,  0,  0, -1,  6, 10]
         ]
 
-    # Loop de criação dos inputs
     for i in range(dimensao):
         st.sidebar.markdown(f"**Equação {i+1}**")
         
-        # Cria colunas proporcionais para input e texto da variável
         cols_config = []
         for _ in range(dimensao): cols_config.extend([1.8, 0.6]) 
         cols_config.append(1.8) 
@@ -94,7 +95,6 @@ def renderizar_sidebar():
         cols = st.sidebar.columns(cols_config)
         linha_atual = []
         
-        # Inputs dos coeficientes
         for j in range(dimensao):
             if presets:
                 try: val_padrao = float(presets[i][j])
@@ -104,7 +104,14 @@ def renderizar_sidebar():
                 if i == dimensao-1 and j == dimensao-1: val_padrao = 1.0
             
             with cols[j*2]:
-                val = st.number_input(f"a_{i}_{j}", value=val_padrao, key=f"cell_{dimensao}_{i}_{j}", label_visibility="collapsed")
+                # Se o valor for inteiro (ex: 1.0), mostra como int. Se for float quebrado, mostra float.
+                val = st.number_input(
+                    f"a_{i}_{j}", 
+                    value=val_padrao, 
+                    key=f"cell_{dimensao}_{i}_{j}", 
+                    label_visibility="collapsed",
+                    format="%.4g" # Essa formatação remove zeros à direita automaticamente!
+                )
                 linha_atual.append(val)
             
             with cols[j*2 + 1]:
@@ -112,14 +119,19 @@ def renderizar_sidebar():
                 var_name = var_names[j] if j < len(var_names) else f"x{j+1}"
                 st.markdown(f"<div style='{style_texto}'>{var_name} {sinal}</div>", unsafe_allow_html=True)
         
-        # Input do termo independente (b)
         with cols[-1]:
             if presets:
                 try: val_d_padrao = float(presets[i][-1])
                 except IndexError: val_d_padrao = 0.0
             else: val_d_padrao = float(i+1 + dimensao)
 
-            val_d = st.number_input(f"d_{i}", value=val_d_padrao, key=f"res_{dimensao}_{i}", label_visibility="collapsed")
+            val_d = st.number_input(
+                f"d_{i}", 
+                value=val_d_padrao, 
+                key=f"res_{dimensao}_{i}", 
+                label_visibility="collapsed",
+                format="%.4g" # Remove zeros à direita
+            )
             linha_atual.append(val_d)
             
         matriz_input.append(linha_atual)
